@@ -75,8 +75,7 @@ public class FormulaCell extends Cell {
 
     public String getValue()
     {
-        String inputString = getDisplayString();
-        return inputString;
+        return getDisplayString();
     }
 
     public String parseText(String input)
@@ -96,15 +95,15 @@ public class FormulaCell extends Cell {
             if (inputArray[0].equals("sum")) {
                 int colNum1 = Character.getNumericValue(inputArray[1].charAt(0)) - 10;
                 int rowNum1 = Integer.parseInt(inputArray[1].substring(1, 2)) - 1;
-                int colNum2 = Character.getNumericValue(inputArray[2].charAt(0)) - 10;
-                int rowNum2 = Integer.parseInt(inputArray[2].substring(1, 2)) - 1;
+                int colNum2 = Character.getNumericValue(inputArray[3].charAt(0)) - 10;
+                int rowNum2 = Integer.parseInt(inputArray[3].substring(1, 2)) - 1;
 
                 input = sp.sum(rowNum1, colNum1, rowNum2, colNum2) + "";
             } else if (inputArray[0].equals("avg")) {
                 int colNum1 = Character.getNumericValue(inputArray[1].charAt(0)) - 10;
                 int rowNum1 = Integer.parseInt(inputArray[1].substring(1, 2)) - 1;
-                int colNum2 = Character.getNumericValue(inputArray[2].charAt(0)) - 10;
-                int rowNum2 = Integer.parseInt(inputArray[2].substring(1, 2)) - 1;
+                int colNum2 = Character.getNumericValue(inputArray[3].charAt(0)) - 10;
+                int rowNum2 = Integer.parseInt(inputArray[3].substring(1, 2)) - 1;
 
                 input = sp.avg(rowNum1, colNum1, rowNum2, colNum2) + "";
             } else {

@@ -41,8 +41,8 @@ public class TextExcel
                     try{
                         int colNum1 = ((int)inputArray[1].charAt(0))-65;
                         int rowNum1 = Integer.parseInt(String.valueOf(inputArray[1].charAt(1)))-1;
-                        int colNum2 = ((int)inputArray[2].charAt(0))-65;
-                        int rowNum2 = Integer.parseInt(String.valueOf(inputArray[2].charAt(1)))-1;
+                        int colNum2 = ((int)inputArray[3].charAt(0))-65;
+                        int rowNum2 = Integer.parseInt(String.valueOf(inputArray[3].charAt(1)))-1;
                         sp.clearRange(rowNum1,colNum1,rowNum2,colNum2);
                     }catch(Exception e){
                         colNum = ((int)inputArray[1].charAt(0))-65;
@@ -55,8 +55,8 @@ public class TextExcel
                 inputArray = input.split(" ");
                 int colNum1 = ((int)inputArray[1].charAt(0))-65;
                 int rowNum1 = Integer.parseInt(String.valueOf(inputArray[1].charAt(1)))-1;
-                int colNum2 = ((int)inputArray[2].charAt(0))-65;
-                int rowNum2 = Integer.parseInt(String.valueOf(inputArray[2].charAt(1)))-1;
+                int colNum2 = ((int)inputArray[3].charAt(0))-65;
+                int rowNum2 = Integer.parseInt(String.valueOf(inputArray[3].charAt(1)))-1;
                 if(inputArray[0].toLowerCase().equals("sorta")){
                     sp.sortA(rowNum1,colNum1,rowNum2,colNum2);
                 }
