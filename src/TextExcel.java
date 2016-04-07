@@ -66,10 +66,12 @@ public class TextExcel
             }
             else if (input.contains("\""))
             {
-                inputArray = input.split(" ");
+                inputArray = input.split("=");
+                inputArray[0]=inputArray[0].trim();
+                inputArray[1]=inputArray[1].trim();
                 colNum = ((int)inputArray[0].charAt(0))-65;
                 rowNum = Integer.parseInt(String.valueOf(inputArray[0].charAt(1)))-1;
-                value = inputArray[2];
+                value = inputArray[1];
                 sp.setCell(rowNum,colNum,new StringCell(value));
             }
             else if (input.contains("(") && input.contains(")"))
@@ -93,7 +95,7 @@ public class TextExcel
             {
                 colNum = ((int)input.charAt(0))-65;
                 rowNum = Integer.parseInt(String.valueOf(input.charAt(1)))-1;
-                System.out.println(input+" = "+sp.getCellValue(rowNum,colNum));
+                System.out.println(input+" = "+sp.getInputValue(rowNum,colNum));
             }
         }
 

@@ -26,10 +26,6 @@ public class FormulaCell extends Cell {
             {
                 inputString  = "<empty>";
             }
-        else
-            {
-                inputString = "( " + inputString + " )";
-            }
         return inputString;
     }
 

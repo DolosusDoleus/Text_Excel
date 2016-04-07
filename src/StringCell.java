@@ -60,17 +60,6 @@ public class StringCell extends Cell {
     {
         String toDisplay = getInputString();
 
-        if (toDisplay.startsWith("\""))
-        {
-            toDisplay = toDisplay.substring(1);
-            if (toDisplay.endsWith("\""))
-            {
-                toDisplay = toDisplay.substring(0, toDisplay.length() - 1);
-            }
-        }
-        else
-            toDisplay = "<empty>";
-
         toDisplay.replaceAll("\"","\\\"");
         return toDisplay;
     }
