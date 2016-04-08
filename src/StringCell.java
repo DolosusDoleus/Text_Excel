@@ -18,10 +18,6 @@ public class StringCell extends Cell {
         {
             inputString  = "";
         }
-        else
-        {
-            inputString = "\"" + inputString + "\"";
-        }
         return inputString;
     }
 
