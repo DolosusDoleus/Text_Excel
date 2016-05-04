@@ -1,3 +1,5 @@
+import java.text.ParseException;
+
 /**
  * Created by nparker on 12/21/2015.
  */
@@ -71,7 +73,7 @@ public class FormulaCell extends Cell {
 
     public String getValue()
     {
-        return getDisplayString();
+        return parseText(getInputString());
     }
 
     public String parseText(String input)
@@ -141,7 +143,7 @@ public class FormulaCell extends Cell {
 
                 input = Double.toString(total);
             }
-        } catch (Error e)
+        } catch (StackOverflowError e)
         {
             input = "ERROR";
         }
