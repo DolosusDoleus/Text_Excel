@@ -40,13 +40,13 @@ public class TextExcel
                     inputArray = input.split(" ");
                     try{
                         int colNum1 = ((int)inputArray[1].charAt(0))-65;
-                        int rowNum1 = Integer.parseInt(String.valueOf(inputArray[1].charAt(1)))-1;
+                        int rowNum1 = Integer.parseInt(String.valueOf(inputArray[1].substring(1)))-1;
                         int colNum2 = ((int)inputArray[3].charAt(0))-65;
-                        int rowNum2 = Integer.parseInt(String.valueOf(inputArray[3].charAt(1)))-1;
+                        int rowNum2 = Integer.parseInt(String.valueOf(inputArray[3].substring(1)))-1;
                         sp.clearRange(rowNum1,colNum1,rowNum2,colNum2);
                     }catch(Exception e){
                         colNum = ((int)inputArray[1].charAt(0))-65;
-                        rowNum = Integer.parseInt(String.valueOf(inputArray[1].charAt(1)))-1;
+                        rowNum = Integer.parseInt(String.valueOf(inputArray[1].substring(1)))-1;
                         sp.clearCell(rowNum,colNum);
                     }
                 }
@@ -54,9 +54,9 @@ public class TextExcel
             else if(input.toLowerCase().contains("sort")){
                 inputArray = input.split(" ");
                 int colNum1 = ((int)inputArray[1].charAt(0))-65;
-                int rowNum1 = Integer.parseInt(String.valueOf(inputArray[1].charAt(1)))-1;
+                int rowNum1 = Integer.parseInt(String.valueOf(inputArray[1].substring(1)))-1;
                 int colNum2 = ((int)inputArray[3].charAt(0))-65;
-                int rowNum2 = Integer.parseInt(String.valueOf(inputArray[3].charAt(1)))-1;
+                int rowNum2 = Integer.parseInt(String.valueOf(inputArray[3].substring(1)))-1;
                 if(inputArray[0].toLowerCase().equals("sorta")){
                     sp.sortA(rowNum1,colNum1,rowNum2,colNum2);
                 }
@@ -70,7 +70,7 @@ public class TextExcel
                 inputArray[0]=inputArray[0].trim();
                 inputArray[1]=inputArray[1].trim();
                 colNum = ((int)inputArray[0].charAt(0))-65;
-                rowNum = Integer.parseInt(String.valueOf(inputArray[0].charAt(1)))-1;
+                rowNum = Integer.parseInt(String.valueOf(inputArray[0].substring(1)))-1;
                 value = inputArray[1];
                 sp.setCell(rowNum,colNum,new StringCell(value));
             }
@@ -79,7 +79,7 @@ public class TextExcel
                 inputArray = input.split("\\(");
                 String[] inputArray2 = inputArray[0].split(" ");
                 colNum = ((int)inputArray2[0].charAt(0))-65;
-                rowNum = Integer.parseInt(String.valueOf(inputArray2[0].charAt(1)))-1;
+                rowNum = Integer.parseInt(String.valueOf(inputArray2[0].substring(1)))-1;
                 value = "("+inputArray[1];
                 sp.setCell(rowNum,colNum,new FormulaCell(value,sp));
             }
@@ -87,14 +87,14 @@ public class TextExcel
             {
                 inputArray = input.split(" ");
                 colNum = ((int)inputArray[0].charAt(0))-65;
-                rowNum = Integer.parseInt(String.valueOf(inputArray[0].charAt(1)))-1;
+                rowNum = Integer.parseInt(String.valueOf(inputArray[0].substring(1)))-1;
                 value = inputArray[2];
                 sp.setCell(rowNum, colNum, new NumberCell(value));
             }
             else
             {
                 colNum = ((int)input.charAt(0))-65;
-                rowNum = Integer.parseInt(String.valueOf(input.charAt(1)))-1;
+                rowNum = Integer.parseInt(String.valueOf(input.substring(1)))-1;
                 System.out.println(input+" = "+sp.getInputValue(rowNum,colNum));
             }
         }
